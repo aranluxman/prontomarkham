@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 66" role="img" aria-labelledby="prontoLogoTitle">
+  <title id="prontoLogoTitle">Pronto Automotive</title>
+  <!-- Speed stripes: the signature element of the original Pronto mark -->
+  <g fill="#C41E2A" transform="skewX(-18)">
+    <rect x="18" y="13" width="44" height="4.6" rx="2.3"/>
+    <rect x="23" y="21" width="39" height="4.6" rx="2.3"/>
+    <rect x="28" y="29" width="34" height="4.6" rx="2.3"/>
+    <rect x="33" y="37" width="29" height="4.6" rx="2.3"/>
+  </g>
+  <!-- Italic wordmark -->
+  <text x="72" y="42" transform="skewX(-12)" fill="#1B1E23"
+        font-family="'Plus Jakarta Sans', 'Arial Black', Arial, sans-serif"
+        font-size="33" font-weight="700" letter-spacing="-0.4">PRONTO</text>
+  <!-- Swoosh underline: charcoal sweep with a red accent beneath -->
+  <path d="M24 53 C 88 46, 168 44, 236 43 C 170 48.5, 98 51.5, 24 53 Z" fill="#1B1E23"/>
+  <path d="M38 58.5 C 98 53.5, 166 51.5, 220 50.5 C 166 54.5, 104 57.2, 38 58.5 Z" fill="#C41E2A"/>
+  <text x="236" y="65" text-anchor="end" fill="#7B838D"
+        font-family="'Plus Jakarta Sans', Arial, sans-serif"
+        font-size="7.6" font-weight="700" letter-spacing="2.6">AUTOMOTIVE</text>
+</svg>

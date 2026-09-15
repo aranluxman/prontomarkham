@@ -1,0 +1,103 @@
+/* Components for the multi-page site (loaded after styles.css) */
+
+/* ---------- Logo ---------- */
+.brand .logo{display:block; width:176px; height:auto}
+.site-footer .brand .logo{width:190px}
+
+/* ---------- Service cards link to their pages ---------- */
+.svc-body h3 a{color:inherit; text-decoration:none}
+.svc-body h3 a:hover{color:var(--red)}
+
+/* ---------- Additional services ---------- */
+.svc-extra{margin-top:48px; padding:28px 30px; background:var(--soft); border:1px solid var(--line); border-radius:var(--radius-lg)}
+.svc-extra h3{margin-bottom:16px}
+.svc-extra ul{list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px 24px}
+.svc-extra li{display:flex; align-items:center; gap:10px; font-size:.95rem; color:var(--ink-2)}
+.svc-extra li::before{content:""; width:6px; height:6px; border-radius:50%; background:var(--red); flex:none}
+
+/* ---------- Review carousel ---------- */
+.rev-carousel{max-width:880px; margin:0 auto; display:grid; grid-template-columns:auto minmax(0,1fr) auto; align-items:center; gap:18px}
+.rev-viewport{display:grid; min-height:270px; padding:40px 44px 34px; background:#fff; border:1px solid var(--line); border-radius:var(--radius-lg)}
+.rev-slide{grid-area:1 / 1; align-self:center; margin:0; opacity:0; visibility:hidden; transition:opacity .5s ease, visibility .5s ease}
+.rev-slide.is-active{opacity:1; visibility:visible}
+.rev-slide::before{content:"\201C"; display:block; height:40px; font-family:var(--display); font-weight:700; font-size:4.2rem; line-height:1; color:var(--red)}
+.rev-slide blockquote{margin:0}
+.rev-slide blockquote p{font-family:var(--display); font-weight:500; color:var(--ink); font-size:clamp(1.02rem,1.5vw,1.18rem); line-height:1.65}
+.rev-slide blockquote p + p{margin-top:12px}
+.rev-by{display:flex; align-items:center; gap:10px; margin-top:20px; font-family:var(--display); font-weight:600; font-size:.95rem; color:var(--ink)}
+.rev-by::before{content:""; width:18px; height:2px; border-radius:2px; background:var(--red); flex:none}
+.rev-arrow{width:46px; height:46px; display:grid; place-items:center; border-radius:50%; border:1px solid var(--line); background:#fff; color:var(--ink); cursor:pointer; transition:border-color .18s ease, color .18s ease}
+.rev-arrow:hover{border-color:var(--red); color:var(--red)}
+.rev-arrow:focus-visible, .rev-dot:focus-visible{outline:3px solid var(--red); outline-offset:2px}
+.rev-arrow svg{width:20px; height:20px}
+.rev-dots{grid-column:1 / -1; display:flex; justify-content:center; gap:9px; margin-top:4px}
+.rev-dot{width:9px; height:9px; padding:0; border:0; border-radius:50%; background:var(--line); cursor:pointer; transition:background .2s ease, transform .2s ease}
+.rev-dot[aria-current="true"]{background:var(--red); transform:scale(1.25)}
+
+/* ---------- Map ---------- */
+.map-card iframe{position:absolute; inset:0; z-index:3; width:100%; height:100%; border:0}
+.map-open{
+  position:absolute; left:14px; bottom:14px; z-index:4; display:inline-flex; align-items:center; height:38px; padding:0 15px;
+  border-radius:999px; border:1px solid var(--line); background:#fff; color:var(--ink); text-decoration:none;
+  font-family:var(--display); font-weight:600; font-size:.85rem; box-shadow:var(--shadow-md);
+}
+.map-open:hover{color:var(--red); border-color:var(--red)}
+
+/* ---------- Contact details ---------- */
+.v-sub{margin-top:4px; font-size:.88rem; color:var(--muted)}
+.v-sub a{color:var(--ink-2); text-decoration:none}
+.v-sub a:hover{color:var(--red)}
+.hours-tz{margin-top:6px; font-size:.82rem; color:var(--muted)}
+.foot-hours{margin-top:14px; font-size:.9rem; line-height:1.7}
+
+/* ---------- Booking form ---------- */
+.hp-field{position:absolute !important; left:-9999px !important; width:1px; height:1px; opacity:0}
+.form-error{margin:0 0 14px; padding:11px 13px; border-radius:8px; background:#FEF3F3; border:1px solid #F1C9CC; color:var(--red-dark); font-size:.88rem}
+
+/* ---------- Service and fleet pages ---------- */
+.page-hero{padding:56px 0 50px; background:linear-gradient(180deg,#fff 0%, var(--soft) 100%); border-bottom:1px solid var(--line-2)}
+.crumbs{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:18px; font-size:.85rem; color:var(--muted)}
+.crumbs a{color:var(--muted); text-decoration:none}
+.crumbs a:hover{color:var(--red)}
+.page-hero-grid{display:grid; grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr); gap:52px; align-items:center}
+.page-hero h1{margin-bottom:16px; text-wrap:balance}
+.page-hero .lede{margin-bottom:26px}
+.page-hero-media img{width:100%; aspect-ratio:4 / 3; object-fit:cover; border-radius:var(--radius-lg); box-shadow:var(--shadow-md)}
+.page-body{display:grid; grid-template-columns:minmax(0,1fr) 320px; gap:56px; align-items:start}
+.prose h2{font-size:1.5rem; margin:0 0 14px}
+.prose * + h2{margin-top:42px}
+.prose p{max-width:65ch; margin-bottom:14px}
+.check-list{list-style:none; margin:8px 0 0; padding:0; display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px 24px}
+.check-list li{display:flex; align-items:flex-start; gap:10px; font-size:.97rem; color:var(--ink-2)}
+.check-list svg{width:16px; height:16px; margin-top:4px; color:var(--red); flex:none}
+.name-grid{list-style:none; margin:8px 0 0; padding:0; display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px}
+.name-grid li{padding:12px 14px; background:#fff; border:1px solid var(--line); border-radius:var(--radius); font-family:var(--display); font-weight:600; font-size:.92rem; color:var(--ink-2)}
+.feature-pair{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; margin-top:8px}
+.feature-pair > div{padding:22px; background:var(--soft); border:1px solid var(--line); border-radius:var(--radius-lg)}
+.feature-pair h3{margin-bottom:8px}
+.aside-card{position:sticky; top:100px; padding:26px; background:#fff; border:1px solid var(--line); border-radius:var(--radius-lg)}
+.aside-card h3{margin-bottom:10px}
+.aside-card p{margin-bottom:16px; font-size:.93rem}
+.aside-card .btn{width:100%; margin-bottom:10px}
+.aside-links{list-style:none; margin:18px 0 0; padding:18px 0 0; border-top:1px solid var(--line-2)}
+.aside-links li + li{margin-top:8px}
+.aside-links a{color:var(--ink-2); text-decoration:none; font-size:.93rem}
+.aside-links a:hover, .aside-links a[aria-current="page"]{color:var(--red)}
+
+@media (max-width:1100px){
+  .page-hero-grid, .page-body{grid-template-columns:1fr; gap:36px}
+  .page-hero-media{order:-1}
+  .aside-card{position:static}
+  .svc-extra ul, .name-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:720px){
+  .brand .logo{width:150px}
+  .rev-carousel{grid-template-columns:1fr 1fr; gap:14px}
+  .rev-viewport{grid-column:1 / -1; grid-row:1; padding:30px 22px 26px}
+  .rev-prev{justify-self:end}
+  .rev-next{justify-self:start}
+  .rev-dots{grid-row:3}
+  .page-hero{padding:34px 0 36px}
+  .check-list, .svc-extra ul, .name-grid, .feature-pair{grid-template-columns:1fr}
+  .svc-extra{padding:22px}
+}
