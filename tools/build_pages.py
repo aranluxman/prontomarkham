@@ -47,6 +47,7 @@ def page(path, title, description, body, active):
 <link rel="stylesheet" href="{root}css/styles.css">
 <link rel="stylesheet" href="{root}css/components.css">
 <link rel="stylesheet" href="{root}css/chat.css">
+<link rel="stylesheet" href="{root}css/motion.css">
 <link rel="icon" href="{root}assets/logo/favicon.svg" type="image/svg+xml">
 </head>
 <body>

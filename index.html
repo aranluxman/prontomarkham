@@ -73,6 +73,7 @@
 <link rel="stylesheet" href="css/styles.css">
 <link rel="stylesheet" href="css/components.css">
 <link rel="stylesheet" href="css/chat.css">
+<link rel="stylesheet" href="css/motion.css">
 <link rel="icon" href="assets/logo/favicon.svg" type="image/svg+xml">
 </head>
 <body>
@@ -84,7 +85,7 @@
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
       5833 Highway 7 East, Markham, Ontario
     </div>
-    <div class="t-item">Toll-free <a href="tel:+18774776686">1-877-477-6686</a></div>
+    <div class="t-item t-item--right"><span class="status-pill" hidden><span class="status-dot" aria-hidden="true"></span><span class="status-text"></span></span><span>Toll-free <a href="tel:+18774776686">1-877-477-6686</a></span></div>
   </div>
 </div>
 
@@ -141,6 +142,7 @@
     <div class="wrap hero-grid">
       <div>
         <h1>Trusted Auto Repair in Markham <span class="accent">Since 1979</span></h1>
+        <p class="hero-rotator">Expert care for your <span class="rotator" aria-live="off"><span>Daily Driver</span><span>Family SUV</span><span>Work Truck</span><span>Diesel Pickup</span><span>Business Fleet</span></span></p>
         <p class="hero-sub">Friendly service, experienced technicians and straightforward automotive repair for Markham drivers and local fleets.</p>
         <div class="hero-actions">
           <button class="btn btn-primary btn-lg" data-book>Book Service</button>
@@ -158,6 +160,8 @@
       </div>
 
       <div class="hero-media">
+        <div class="hero-badge hero-badge--status status-pill" aria-hidden="true" hidden><span class="status-dot"></span><span class="status-text"></span></div>
+        <div class="hero-badge hero-badge--since" aria-hidden="true"><span>Since <b data-count="1979" data-count-from="1900">1979</b> &middot; Gas &amp; Diesel</span></div>
         <div class="hero-frame" id="heroFrame" style="--cycle:35s; --step:7s; --fade:2s">
           <figure class="scene" style="--i:0; --focal:62% 50%; --origin:65% 45%; --kb-from:scale(1.04) translate3d(1.2%, 0, 0); --kb-to:scale(1.12) translate3d(-1.2%, -0.6%, 0)">
             <img src="assets/hero/exterior-lg.webp" width="1600" height="900" fetchpriority="high"
@@ -186,7 +190,7 @@
       <div class="trust-grid">
         <div class="trust-item">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
-          <div><h3>45+ Years in Markham</h3><p>Independently owned and operating here since 1979.</p></div>
+          <div><h3><span data-count="45">45</span>+ Years in Markham</h3><p>Independently owned and operating here since 1979.</p></div>
         </div>
         <div class="trust-item">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4.5 4.5 0 0 0 5.9 5.9l-8 8a2.8 2.8 0 0 1-4-4l6.1-9.9Z"/><path d="M14.7 6.3 18 3"/></svg>
@@ -203,6 +207,14 @@
       </div>
     </div>
   </section>
+
+  <!-- ========== SERVICES TICKER ========== -->
+  <div class="svc-ticker" role="region" aria-label="Services we offer">
+    <div class="ticker-track">
+      <ul class="ticker-list"><li>Diagnostics</li><li>Brakes</li><li>Oil &amp; Maintenance</li><li>Tires</li><li>Steering &amp; Suspension</li><li>Engine Repair</li><li>Air Conditioning Service</li><li>Coolant Flush</li><li>Transmission Service</li><li>Wheel Alignment</li><li>Belt &amp; Hose Replacement</li><li>Brake Flush</li><li>Transfer Case Service</li><li>Differential Service</li><li>Fuel System &amp; Intake Cleaning</li><li>Lube, Oil &amp; Filter</li><li>Power Steering Flush</li><li>Tune-Ups</li><li>Windshield &amp; Glass Replacement</li><li>Trailer Hitches &amp; Accessories</li><li>Safety Inspections</li></ul>
+      <ul class="ticker-list" aria-hidden="true"><li>Diagnostics</li><li>Brakes</li><li>Oil &amp; Maintenance</li><li>Tires</li><li>Steering &amp; Suspension</li><li>Engine Repair</li><li>Air Conditioning Service</li><li>Coolant Flush</li><li>Transmission Service</li><li>Wheel Alignment</li><li>Belt &amp; Hose Replacement</li><li>Brake Flush</li><li>Transfer Case Service</li><li>Differential Service</li><li>Fuel System &amp; Intake Cleaning</li><li>Lube, Oil &amp; Filter</li><li>Power Steering Flush</li><li>Tune-Ups</li><li>Windshield &amp; Glass Replacement</li><li>Trailer Hitches &amp; Accessories</li><li>Safety Inspections</li></ul>
+    </div>
+  </div>
 
   <!-- ========== SERVICES ========== -->
   <section class="section" id="services">
@@ -524,8 +536,10 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
             <div style="flex:1">
               <div class="k">Hours</div>
-              <div class="hours-row"><span>Monday &ndash; Friday</span><span>8:00 AM &ndash; 6:00 PM</span></div>
-              <div class="hours-row"><span>Saturday</span><span>8:00 AM &ndash; 1:00 PM</span></div>
+              <span class="status-pill" hidden><span class="status-dot" aria-hidden="true"></span><span class="status-text"></span></span>
+              <div class="hours-row" data-days="1,2,3,4,5"><span>Monday &ndash; Friday</span><span>8:00 AM &ndash; 6:00 PM</span></div>
+              <div class="hours-row" data-days="6"><span>Saturday</span><span>8:00 AM &ndash; 1:00 PM</span></div>
+              <div class="hours-row" data-days="0"><span>Sunday</span><span>Closed</span></div>
               <p class="hours-tz">Eastern Time</p>
             </div>
           </div>
@@ -541,6 +555,8 @@
 
   <!-- ========== FINAL CTA ========== -->
   <section class="final-cta">
+    <span class="cta-ring cta-ring--thick" aria-hidden="true"></span>
+    <span class="cta-ring cta-ring--dashed" aria-hidden="true"></span>
     <div class="wrap">
       <h2>Need Automotive Service?</h2>
       <p>Book your vehicle with a team that has been serving Markham for more than four decades.</p>
@@ -696,11 +712,15 @@
 
 <!-- ========== TOAST ========== -->
 <div class="toast" id="toast" role="status" aria-live="polite">
-  <strong>Request sent</strong>
-  <p id="toastMsg">Thanks — we'll call you to confirm your appointment.</p>
+  <div class="toast-body">
+    <strong>Request sent!</strong>
+    <p id="toastMsg">We&rsquo;ll call you to confirm your appointment.</p>
+  </div>
+  <button type="button" class="toast-close" aria-label="Dismiss notification">&times;</button>
 </div>
 
 <script src="js/site.js"></script>
 <script src="js/chat.js"></script>
+<script src="js/motion.js"></script>
 </body>
 </html>

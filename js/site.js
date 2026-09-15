@@ -23,7 +23,7 @@
     spyLinks.forEach(function(l,i){ l.classList.toggle("active", i === idx); });
   }
   function onScroll(){
-    if(header) header.classList.toggle("stuck", window.scrollY > 8);
+    if(header) header.classList.toggle("stuck", window.scrollY > 40);
     spy();
   }
   window.addEventListener("scroll", onScroll, {passive:true});
@@ -57,27 +57,6 @@
       window.scrollTo({top: Math.max(top,0), behavior:"smooth"});
     });
   });
-
-  /* ---- Reveal on scroll (content stays visible if this never runs) ---- */
-  var rev = $$(".reveal");
-  if("IntersectionObserver" in window){
-    document.documentElement.classList.add("js");
-    var io = new IntersectionObserver(function(entries){
-      entries.forEach(function(en){
-        if(en.isIntersecting){ en.target.classList.add("in"); io.unobserve(en.target); }
-      });
-    }, {threshold:0.08, rootMargin:"0px 0px -40px 0px"});
-    rev.forEach(function(el,i){
-      el.style.transitionDelay = (Math.min(i%3,2) * 70) + "ms";
-      io.observe(el);
-    });
-    window.addEventListener("load", function(){
-      var vh = window.innerHeight;
-      rev.forEach(function(el){ if(el.getBoundingClientRect().top < vh) el.classList.add("in"); });
-    });
-  } else {
-    rev.forEach(function(el){ el.classList.add("in"); });
-  }
 
   /* ---- Moving photo header: runs continuously ---- */
   var heroFrame = $("#heroFrame");
@@ -273,9 +252,6 @@
         });
       })
       .then(function(){
-        var first = payload.name.split(/\s+/)[0];
-        $("#toastMsg").textContent = "Thanks " + first + " — we received your request for " + payload.service +
-          ". A member of the Pronto team will contact you to confirm.";
         form.reset();
         closeModal();
         showToast();
@@ -294,6 +270,7 @@
 
   var toast = $("#toast"), tTimer;
   function showToast(){
+    if(window.prontoToast){ window.prontoToast(); return; }
     clearTimeout(tTimer);
     toast.classList.add("show");
     tTimer = setTimeout(function(){ toast.classList.remove("show"); }, 6000);

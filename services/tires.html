@@ -16,6 +16,7 @@
 <link rel="stylesheet" href="../css/styles.css">
 <link rel="stylesheet" href="../css/components.css">
 <link rel="stylesheet" href="../css/chat.css">
+<link rel="stylesheet" href="../css/motion.css">
 <link rel="icon" href="../assets/logo/favicon.svg" type="image/svg+xml">
 </head>
 <body>
@@ -28,7 +29,7 @@
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
       5833 Highway 7 East, Markham, Ontario
     </div>
-    <div class="t-item">Toll-free <a href="tel:+18774776686">1-877-477-6686</a></div>
+    <div class="t-item t-item--right"><span class="status-pill" hidden><span class="status-dot" aria-hidden="true"></span><span class="status-text"></span></span><span>Toll-free <a href="tel:+18774776686">1-877-477-6686</a></span></div>
   </div>
 </div>
 
@@ -263,11 +264,15 @@
 
 <!-- ========== TOAST ========== -->
 <div class="toast" id="toast" role="status" aria-live="polite">
-  <strong>Request sent</strong>
-  <p id="toastMsg">Thanks — we'll call you to confirm your appointment.</p>
+  <div class="toast-body">
+    <strong>Request sent!</strong>
+    <p id="toastMsg">We&rsquo;ll call you to confirm your appointment.</p>
+  </div>
+  <button type="button" class="toast-close" aria-label="Dismiss notification">&times;</button>
 </div>
 
 <script src="../js/site.js"></script>
 <script src="../js/chat.js"></script>
+<script src="../js/motion.js"></script>
 </body>
 </html>
