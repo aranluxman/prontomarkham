@@ -255,17 +255,6 @@ p{margin:0}
 .why-item h3{margin-bottom:6px}
 .why-item p{font-size:.95rem}
 
-/* ---------- Photo break ---------- */
-.photobreak{position:relative}
-.photobreak img{width:100%; height:clamp(300px,42vw,500px); object-fit:cover}
-.photobreak figcaption{
-  position:absolute; left:0; right:0; bottom:0; padding:22px 0;
-  background:linear-gradient(to top, rgba(27,30,35,.72), rgba(27,30,35,0));
-  color:#fff; font-family:var(--display); font-weight:500; font-size:.95rem;
-}
-.photobreak figcaption .wrap{display:flex; align-items:center; gap:10px}
-.photobreak svg{width:16px;height:16px;color:#F08A90}
-
 /* ---------- Fleet ---------- */
 .fleet-list{list-style:none; margin:22px 0 0; padding:0; display:grid; grid-template-columns:1fr 1fr; gap:10px 22px}
 .fleet-list li{display:flex; align-items:center; gap:9px; font-size:.94rem; color:var(--ink-2)}
