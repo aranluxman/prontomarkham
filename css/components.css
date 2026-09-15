@@ -101,3 +101,6 @@
   .check-list, .svc-extra ul, .name-grid, .feature-pair{grid-template-columns:1fr}
   .svc-extra{padding:22px}
 }
+
+/* ---------- Fleet checklist emphasis (homepage) ---------- */
+.fleet-list li{font-weight:600; color:var(--ink)}

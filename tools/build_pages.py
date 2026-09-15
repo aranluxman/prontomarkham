@@ -157,7 +157,7 @@ FLEET_BODY = f"""
           <a href="tel:+19052949476" class="btn btn-outline btn-lg">Call 905-294-9476</a>
         </div>
       </div>
-      <div class="page-hero-media"><img src="{{root}}assets/fleet-trucks.jpg" width="1000" height="740" alt="A line of commercial fleet trucks ready for scheduled service."></div>
+      <div class="page-hero-media"><img src="{{root}}assets/fleet-service.jpg" width="1400" height="933" alt="Commercial vans and trucks lined up outside a fleet service garage."></div>
     </div>
   </section>
 
@@ -170,9 +170,11 @@ FLEET_BODY = f"""
         <h2>Why fleets choose Pronto</h2>
         <div class="feature-pair">
           <div><h3>Technical skill</h3><p>Our technicians regularly train above industry-standard skill levels, backed by in-house service audit programs, to ensure the best service for your fleet.</p></div>
-          <div><h3>Fleet expertise</h3><p>Our experience, communication and scheduling minimize vehicle downtime and maximize fleet reliability.</p></div>
+          <div><h3>Fleet expertise</h3><p>Our experience, communication and scheduling minimize vehicle downtime and maximize fleet reliability. We drive your bottom line!</p></div>
         </div>
 
+        <h2>For logistics managers</h2>
+        <p>Let us alleviate the burden of fleet maintenance control with our proven results!</p>
         <h2>Fleet vehicle services</h2>
         <p>Just a sampling of what we do &mdash; there&rsquo;s lots more.</p>
         {checks(["On-site glass service", "Annual inspections", "HVAC and A/C", "Starters and alternators", "Tires and exhaust", "Cooling systems", "Brake systems and ABS", "Accessory installations", "Lighting and electrical", "Mobile and emission testing", "Complete trailer repair", "Drive train and differential", "Steering and alignment", "Batteries and no-starts", "Hydraulics", "PM service and oil changes", "Suspension and driveline", "Hoses, belts and pumps"])}
@@ -182,7 +184,7 @@ FLEET_BODY = f"""
         <p style="margin-top:12px">and many more.</p>
 
         <h2>Fleet programs we accept</h2>
-        <ul class="name-grid">{"".join(f"<li>{n}</li>" for n in ["PHH Fleet Management", "GE Capital Fleet", "Corporate Card", "Foss National Leasing", "Transportaction Lease Systems", "Logistics Managers"])}</ul>
+        <ul class="name-grid">{"".join(f"<li>{n}</li>" for n in ["PHH Fleet Management", "GE Capital Fleet", "Corporate Card", "Foss National Leasing", "Transportaction Lease Systems"])}</ul>
       </div>
       <aside class="aside-card">
         <h3>Set up a fleet program</h3>
