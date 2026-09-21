@@ -77,7 +77,7 @@
   }
 
   /* ---- 3. Live open / closed status (America/Toronto) ---- */
-  var HOURS = { 1:[8,18], 2:[8,18], 3:[8,18], 4:[8,18], 5:[8,18], 6:[8,13] }; // Sunday (0) closed
+  var HOURS = { 1:[8,17], 2:[8,17], 3:[8,17], 4:[8,17], 5:[8,17], 6:[8,12] }; // Sunday (0) closed
   var DAY_NAMES = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
   var WEEKDAY = { Sun:0, Mon:1, Tue:2, Wed:3, Thu:4, Fri:5, Sat:6 };
   var torontoFormat = null;

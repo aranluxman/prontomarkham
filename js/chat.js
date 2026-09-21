@@ -6,7 +6,6 @@
 
   var ROOT = document.documentElement.getAttribute("data-root") || "";
   var PHONE = '<a href="tel:+19052949476">905-294-9476</a>';
-  var TOLL = '<a href="tel:+18774776686">1-877-477-6686</a>';
   var EMAIL = '<a href="mailto:info@prontomarkham.com">info@prontomarkham.com</a>';
   var MAPS = "https://www.google.com/maps/search/?api=1&query=5833+Highway+7+East+Markham+Ontario";
 
@@ -43,13 +42,13 @@
       reply: "We look after fleets large and small &mdash; cars, trucks and trailers &mdash; with maintenance programs built around your schedule and budget, plus free pick-up and delivery for most vehicles and equipment.",
       actions: [FLEET, CALL] },
     { keys: ["hour", "open", "close", "saturday", "sunday", "weekend", "today"],
-      reply: "We're open <strong>Monday&ndash;Friday, 8 AM&ndash;6 PM</strong> and <strong>Saturday, 8 AM&ndash;1 PM</strong> (Eastern Time).",
+      reply: "We're open <strong>Monday&ndash;Friday, 8 AM&ndash;5 PM</strong> and <strong>Saturday, 8 AM&ndash;12 PM</strong> (Eastern Time).",
       actions: [BOOK, CALL] },
     { keys: ["where", "address", "location", "direction", "map", "find you", "highway", "hwy"],
       reply: "You'll find us at <strong>5833 Highway 7 East, Markham, Ontario</strong>.",
       actions: [DIRECTIONS, CALL] },
     { keys: ["phone", "call", "number", "contact", "fax", "toll", "email", "reach"],
-      reply: "Call " + PHONE + " (toll-free " + TOLL + "), email " + EMAIL + ", or fax (905) 294-3383.",
+      reply: "Call " + PHONE + ", email " + EMAIL + ", or fax (905) 294-3383.",
       actions: [CALL] },
     { keys: ["book", "appointment", "schedule", "reserve", "drop off", "bring my", "bring in"],
       reply: "Tap <strong>Book service</strong> to send a request with your vehicle and preferred date. It isn't confirmed until a member of the Pronto team contacts you. Prefer to talk? Call " + PHONE + ".",
