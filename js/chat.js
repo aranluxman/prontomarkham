@@ -43,7 +43,7 @@
       reply: "We look after fleets large and small &mdash; cars, trucks and trailers &mdash; with maintenance programs built around your schedule and budget, plus free pick-up and delivery for most vehicles and equipment.",
       actions: [FLEET, CALL] },
     { keys: ["hour", "open", "close", "saturday", "sunday", "weekend", "today"],
-      reply: "We're open <strong>Monday&ndash;Friday, 8 AM&ndash;6 PM</strong> and <strong>Saturday, 8 AM&ndash;1 PM</strong> (Eastern Time).",
+      reply: "We're open <strong>Monday&ndash;Friday, 8 AM&ndash;5 PM</strong> and <strong>Saturday, 8 AM&ndash;12 PM</strong> (Eastern Time).",
       actions: [BOOK, CALL] },
     { keys: ["where", "address", "location", "direction", "map", "find you", "highway", "hwy"],
       reply: "You'll find us at <strong>5833 Highway 7 East, Markham, Ontario</strong>.",
