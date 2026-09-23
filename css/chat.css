@@ -42,6 +42,7 @@
   font-family:var(--display); font-weight:600; font-size:.8rem;
 }
 .chat-action:hover{border-color:var(--red); color:var(--red)}
+.chat-hint{display:block; margin-top:4px; font-size:.78rem; color:var(--muted)}
 
 .chat-chips{display:flex; gap:6px; overflow-x:auto; padding:10px 12px 0; background:#fff; border-top:1px solid var(--line-2)}
 .chat-chips button{

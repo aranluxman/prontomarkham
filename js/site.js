@@ -127,12 +127,15 @@
   if(yr) yr.textContent = new Date().getFullYear();
 
   /* ---- Booking modal ---- */
+  // Token routes to aran.luxman@gmail.com (activated); FORM_CC gets a copy.
+  // Shared with the chat assistant (js/chat.js), which books through the same inboxes.
+  var FORM_ENDPOINT = "https://formsubmit.co/ajax/d8c7d379297441922ad465906d5c49d9";
+  var FORM_CC = "info@prontomarkham.com";
+  window.prontoForm = { endpoint: FORM_ENDPOINT, cc: FORM_CC };
+
   var modal = $("#modal"), form = $("#bookForm");
   if(!modal || !form){ onScroll(); return; }
 
-  // Token routes to aran.luxman@gmail.com (activated); FORM_CC gets a copy.
-  var FORM_ENDPOINT = "https://formsubmit.co/ajax/d8c7d379297441922ad465906d5c49d9";
-  var FORM_CC = "info@prontomarkham.com";
   var lastFocus = null;
   var phone = $("#b-phone");
   var submitBtn = $("#bookSubmit");
