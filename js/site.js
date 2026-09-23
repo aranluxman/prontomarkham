@@ -130,7 +130,9 @@
   var modal = $("#modal"), form = $("#bookForm");
   if(!modal || !form){ onScroll(); return; }
 
-  var FORM_ENDPOINT = "https://formsubmit.co/ajax/aran.luxman@gmail.com";
+  // Token routes to aran.luxman@gmail.com (activated); FORM_CC gets a copy.
+  var FORM_ENDPOINT = "https://formsubmit.co/ajax/d8c7d379297441922ad465906d5c49d9";
+  var FORM_CC = "info@prontomarkham.com";
   var lastFocus = null;
   var phone = $("#b-phone");
   var submitBtn = $("#bookSubmit");
@@ -233,6 +235,7 @@
       preferred_date: $("#b-date").value,
       message: $("#b-message").value.trim(),
       _subject: "Service request: " + svc.value + " - " + name.value.trim(),
+      _cc: FORM_CC,
       _template: "table",
       _captcha: "false"
     };

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://aranluxman.github.io/prontomarkham/sitemap.xml
+Sitemap: https://prontomarkham.com/sitemap.xml
