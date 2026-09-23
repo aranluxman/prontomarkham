@@ -28,6 +28,7 @@
 {
   "@context": "https://schema.org",
   "@type": "AutoRepair",
+  "@id": "https://prontomarkham.com/#business",
   "name": "Pronto Automotive",
   "url": "https://prontomarkham.com/",
   "image": "https://prontomarkham.com/assets/shop-exterior.jpg",
@@ -39,6 +40,8 @@
     { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "08:00", "closes": "12:00" }
   ],
   "foundingDate": "1979",
+  "hasMap": "https://www.google.com/maps/search/?api=1&query=5833+Highway+7+East+Markham+Ontario",
+  "paymentAccepted": "Visa, Mastercard, American Express, Discover",
   "description": "Independent automotive repair shop serving Markham, Ontario since 1979. Diagnostics, brakes, maintenance, tires, steering and suspension, engine repair and fleet service for gas and diesel vehicles.",
   "address": {
     "@type": "PostalAddress",
@@ -324,7 +327,7 @@
       </div>
 
       <div class="svc-more">
-        <button class="btn btn-outline btn-lg" data-book>View All Services</button>
+        <a class="btn btn-outline btn-lg" href="services.html">View All Services</a>
       </div>
     </div>
   </section>
@@ -342,6 +345,7 @@
         <p>Pronto Automotive has been serving Markham and the surrounding area since 1979. We specialize in the diagnosis and repair of gasoline and diesel vehicles, from light duty to heavy duty.</p>
         <p>Whether you need an oil change or an engine change, our goal is courteous, professional service of the highest calibre &mdash; and workmanship we&rsquo;re prepared to stand behind.</p>
         <p>At Pronto, the customer always comes first. We&rsquo;ll be by your side from the first call to long after the repair.</p>
+        <a href="about.html" class="txtlink">More about Pronto</a>
       </div>
     </div>
   </section>
@@ -579,16 +583,18 @@
           <li><a href="services/tires.html">Tires</a></li>
           <li><a href="services/steering-suspension.html">Steering &amp; Suspension</a></li>
           <li><a href="services/engine-repair.html">Engine Repair</a></li>
+          <li><a href="services.html">All Services</a></li>
         </ul>
       </div>
 
       <div class="foot-col">
         <h4>Company</h4>
         <ul>
-          <li><a href="#about" data-scroll>About Pronto</a></li>
+          <li><a href="about.html">About Pronto</a></li>
           <li><a href="fleet.html">Fleet Services</a></li>
-          <li><a href="#reviews" data-scroll>Reviews</a></li>
-          <li><a href="#contact" data-scroll>Contact</a></li>
+          <li><a href="service-areas.html">Areas We Serve</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
 
@@ -671,7 +677,10 @@
             <option>Air Conditioning</option>
             <option>Transmission</option>
             <option>Wheel Alignment</option>
+            <option>Electrical &amp; Batteries</option>
+            <option>Exhaust &amp; Mufflers</option>
             <option>Safety Inspection</option>
+            <option>Pre-Purchase Inspection</option>
             <option>Fleet Service</option>
             <option>Not sure — please advise</option>
           </select>

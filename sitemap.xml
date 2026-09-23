@@ -1,11 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://aranluxman.github.io/prontomarkham/</loc></url>
-  <url><loc>https://aranluxman.github.io/prontomarkham/fleet.html</loc></url>
-  <url><loc>https://aranluxman.github.io/prontomarkham/services/oil-maintenance.html</loc></url>
-  <url><loc>https://aranluxman.github.io/prontomarkham/services/brakes.html</loc></url>
-  <url><loc>https://aranluxman.github.io/prontomarkham/services/diagnostics.html</loc></url>
-  <url><loc>https://aranluxman.github.io/prontomarkham/services/tires.html</loc></url>
-  <url><loc>https://aranluxman.github.io/prontomarkham/services/steering-suspension.html</loc></url>
-  <url><loc>https://aranluxman.github.io/prontomarkham/services/engine-repair.html</loc></url>
+  <url><loc>https://prontomarkham.com/</loc><lastmod>2026-09-23</lastmod></url>
+  <url><loc>https://prontomarkham.com/services/oil-maintenance</loc><lastmod>2026-09-23</lastmod></url>
+  <url><loc>https://prontomarkham.com/services/brakes</loc><lastmod>2026-09-23</lastmod></url>
+  <url><loc>https://prontomarkham.com/services/diagnostics</loc><lastmod>2026-09-23</lastmod></url>
+  <url><loc>https://prontomarkham.com/services/tires</loc><lastmod>2026-09-23</lastmod></url>
+  <url><loc>https://prontomarkham.com/services/steering-suspension</loc><lastmod>2026-09-23</lastmod></url>
+  <url><loc>https://prontomarkham.com/services/engine-repair</loc><lastmod>2026-09-23</lastmod></url>
+  <url><loc>https://prontomarkham.com/services/air-conditioning</loc><lastmod>2026-09-23</lastmod></url>
+  <url><loc>https://prontomarkham.com/services/transmission</loc><lastmod>2026-09-23</lastmod></url>
+  <url><loc>https://prontomarkham.com/services/electrical-batteries</loc><lastmod>2026-09-23</lastmod></url>
+  <url><loc>https://prontomarkham.com/services/exhaust</loc><lastmod>2026-09-23</lastmod></url>
+  <url><loc>https://prontomarkham.com/services/inspections</loc><lastmod>2026-09-23</lastmod></url>
+  <url><loc>https://prontomarkham.com/services</loc><lastmod>2026-09-23</lastmod></url>
+  <url><loc>https://prontomarkham.com/fleet</loc><lastmod>2026-09-23</lastmod></url>
+  <url><loc>https://prontomarkham.com/about</loc><lastmod>2026-09-23</lastmod></url>
+  <url><loc>https://prontomarkham.com/contact</loc><lastmod>2026-09-23</lastmod></url>
+  <url><loc>https://prontomarkham.com/faq</loc><lastmod>2026-09-23</lastmod></url>
+  <url><loc>https://prontomarkham.com/service-areas</loc><lastmod>2026-09-23</lastmod></url>
 </urlset>
