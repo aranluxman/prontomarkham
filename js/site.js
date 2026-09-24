@@ -64,23 +64,22 @@
   if(heroFrame && !prefersCalm) heroFrame.classList.add("is-animated");
 
   /* ---- Review carousel ---- */
+  // Rotates on its own and only stops when the visitor clicks it (click again to resume).
   var carousel = $("#reviewCarousel");
   if(carousel){
     var slides = $$(".rev-slide", carousel);
-    var dotsWrap = $(".rev-dots", carousel);
-    var current = 0, timer = null, holding = false;
-    var INTERVAL = 5000;
+    var viewport = $(".rev-viewport", carousel);
+    var toggle = $(".rev-toggle", carousel);
+    var num = $(".rev-num", carousel);
+    var hint = $(".rev-hint", carousel);
+    var current = 0, timer = null, stopped = prefersCalm, swiped = false;
+    $(".rev-total", carousel).textContent = slides.length;
 
-    var dots = slides.map(function(_, i){
-      var d = document.createElement("button");
-      d.type = "button";
-      d.className = "rev-dot";
-      d.setAttribute("aria-label", "Show review " + (i + 1) + " of " + slides.length);
-      d.addEventListener("click", function(){ show(i); restart(); });
-      dotsWrap.appendChild(d);
-      return d;
-    });
-
+    // Longer reviews stay up longer so they can be read.
+    function delay(){
+      var words = slides[current].textContent.trim().split(/\s+/).length;
+      return Math.min(4500 + words * 90, 14000);
+    }
     function show(i){
       current = (i + slides.length) % slides.length;
       slides.forEach(function(s, k){
@@ -88,38 +87,49 @@
         s.classList.toggle("is-active", on);
         s.setAttribute("aria-hidden", String(!on));
       });
-      dots.forEach(function(d, k){ d.setAttribute("aria-current", k === current ? "true" : "false"); });
+      num.textContent = current + 1;
     }
-    function restart(){
-      clearInterval(timer);
-      timer = setInterval(function(){
-        // Hold while someone is reading (hovering or using the controls).
-        if(!holding && !document.hidden) show(current + 1);
-      }, INTERVAL);
+    function schedule(){
+      clearTimeout(timer);
+      if(stopped) return;
+      timer = setTimeout(function(){
+        if(!document.hidden) show(current + 1);
+        schedule();
+      }, delay());
+    }
+    function setStopped(v){
+      stopped = v;
+      carousel.classList.toggle("is-stopped", v);
+      toggle.setAttribute("aria-pressed", String(v));
+      toggle.setAttribute("aria-label", v ? "Play reviews" : "Pause reviews");
+      hint.textContent = v ? "Paused \u2013 tap to resume" : "Tap a review to pause";
+      schedule();
     }
 
+    viewport.addEventListener("click", function(){
+      // A swipe shouldn't also count as a tap that toggles play/pause.
+      if(swiped){ swiped = false; return; }
+      setStopped(!stopped);
+    });
+    toggle.addEventListener("click", function(){ setStopped(!stopped); });
     $$(".rev-arrow", carousel).forEach(function(b){
       b.addEventListener("click", function(){
         show(current + Number(b.getAttribute("data-dir")));
-        restart();
+        setStopped(true);
       });
     });
-    carousel.addEventListener("mouseenter", function(){ holding = true; });
-    carousel.addEventListener("mouseleave", function(){ holding = false; });
-    carousel.addEventListener("focusin", function(){ holding = true; });
-    carousel.addEventListener("focusout", function(){ holding = false; });
 
     var startX = null;
-    carousel.addEventListener("touchstart", function(e){ startX = e.touches[0].clientX; }, {passive:true});
-    carousel.addEventListener("touchend", function(e){
+    viewport.addEventListener("touchstart", function(e){ startX = e.touches[0].clientX; swiped = false; }, {passive:true});
+    viewport.addEventListener("touchend", function(e){
       if(startX === null) return;
       var dx = e.changedTouches[0].clientX - startX;
-      if(Math.abs(dx) > 40){ show(current + (dx < 0 ? 1 : -1)); restart(); }
+      if(Math.abs(dx) > 40){ swiped = true; show(current + (dx < 0 ? 1 : -1)); setStopped(true); }
       startX = null;
     });
 
     show(0);
-    restart();
+    setStopped(stopped);
   }
 
   /* ---- Footer year ---- */

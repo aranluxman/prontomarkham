@@ -28,11 +28,18 @@
 .rev-by::before{content:""; width:18px; height:2px; border-radius:2px; background:var(--red); flex:none}
 .rev-arrow{width:46px; height:46px; display:grid; place-items:center; border-radius:50%; border:1px solid var(--line); background:#fff; color:var(--ink); cursor:pointer; transition:border-color .18s ease, color .18s ease}
 .rev-arrow:hover{border-color:var(--red); color:var(--red)}
-.rev-arrow:focus-visible, .rev-dot:focus-visible{outline:3px solid var(--red); outline-offset:2px}
+.rev-arrow:focus-visible{outline:3px solid var(--red); outline-offset:2px}
 .rev-arrow svg{width:20px; height:20px}
-.rev-dots{grid-column:1 / -1; display:flex; justify-content:center; gap:9px; margin-top:4px}
-.rev-dot{width:9px; height:9px; padding:0; border:0; border-radius:50%; background:var(--line); cursor:pointer; transition:background .2s ease, transform .2s ease}
-.rev-dot[aria-current="true"]{background:var(--red); transform:scale(1.25)}
+.rev-viewport{cursor:pointer}
+.rev-status{grid-column:1 / -1; display:flex; justify-content:center; align-items:center; gap:12px; margin-top:4px; font-family:var(--display); font-size:.9rem; color:var(--muted)}
+.rev-toggle{width:34px; height:34px; display:grid; place-items:center; padding:0; border-radius:50%; border:1px solid var(--line); background:#fff; color:var(--ink); cursor:pointer; transition:border-color .18s ease, color .18s ease}
+.rev-toggle:hover{border-color:var(--red); color:var(--red)}
+.rev-toggle:focus-visible{outline:3px solid var(--red); outline-offset:2px}
+.rev-toggle svg{width:14px; height:14px}
+.rev-toggle .i-play, .rev-carousel.is-stopped .rev-toggle .i-pause{display:none}
+.rev-carousel.is-stopped .rev-toggle .i-play{display:block}
+.rev-count b{color:var(--ink); font-weight:700}
+.rev-hint{padding-left:12px; border-left:1px solid var(--line)}
 
 /* ---------- Map ---------- */
 .map-card iframe{position:absolute; inset:0; z-index:3; width:100%; height:100%; border:0}
@@ -114,7 +121,7 @@
   .rev-viewport{grid-column:1 / -1; grid-row:1; padding:30px 22px 26px}
   .rev-prev{justify-self:end}
   .rev-next{justify-self:start}
-  .rev-dots{grid-row:3}
+  .rev-status{grid-row:3}
   .page-hero{padding:34px 0 36px}
   .check-list, .svc-extra ul, .name-grid, .feature-pair{grid-template-columns:1fr}
   .svc-extra{padding:22px}
