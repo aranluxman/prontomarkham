@@ -137,10 +137,10 @@
   if(yr) yr.textContent = new Date().getFullYear();
 
   /* ---- Booking modal ---- */
-  // Token routes to aran.luxman@gmail.com (activated); every FORM_CC address gets a copy.
+  // Goes to asimrehemtulla@gmail.com (FormSubmit-activated); every FORM_CC address gets a copy.
   // Shared with the chat assistant (js/chat.js), which books through the same inboxes.
-  var FORM_ENDPOINT = "https://formsubmit.co/ajax/d8c7d379297441922ad465906d5c49d9";
-  var FORM_CC = "info@prontomarkham.com,asimrehemtulla@gmail.com";
+  var FORM_ENDPOINT = "https://formsubmit.co/ajax/asimrehemtulla@gmail.com";
+  var FORM_CC = "info@prontomarkham.com";
   window.prontoForm = { endpoint: FORM_ENDPOINT, cc: FORM_CC };
 
   var modal = $("#modal"), form = $("#bookForm");
