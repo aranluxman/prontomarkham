@@ -140,7 +140,7 @@
   // Goes to asimrehemtulla@gmail.com (FormSubmit-activated); every FORM_CC address gets a copy.
   // Shared with the chat assistant (js/chat.js), which books through the same inboxes.
   var FORM_ENDPOINT = "https://formsubmit.co/ajax/asimrehemtulla@gmail.com";
-  var FORM_CC = "info@prontomarkham.com";
+  var FORM_CC = "info@prontomarkham.com,bryan_1101@hotmail.com,rongrills@gmail.com";
   window.prontoForm = { endpoint: FORM_ENDPOINT, cc: FORM_CC };
 
   var modal = $("#modal"), form = $("#bookForm");
