@@ -65,7 +65,10 @@
 .toast{bottom:88px}
 
 @media (max-width:720px){
-  .chat-launcher{bottom:84px; right:12px; height:46px; padding:0 16px 0 13px}
+  /* Icon-only on phones so it never covers page buttons; the label stays for screen readers */
+  .chat-launcher{bottom:86px; right:12px; width:52px; height:52px; padding:0; justify-content:center}
+  .chat-launcher span{position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap}
+  .chat-launcher svg{width:22px; height:22px}
   .chat-panel{left:12px; right:12px; bottom:84px; width:auto; height:min(520px, calc(100vh - 110px))}
   .toast{bottom:144px}
 }
