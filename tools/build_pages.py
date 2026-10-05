@@ -369,7 +369,8 @@ loc = loc[: loc.rindex("</section>")].rstrip()
 loc = loc[: loc.rindex("</div>")].rstrip()  # drop the section's own .wrap close
 body = hero("Visit Us", "Contact Pronto Automotive",
     f"Call the shop, send a service request or stop by. We&rsquo;re on Highway 7 East in Markham, serving drivers from {AREAS}.",
-    '<button class="btn btn-primary btn-lg" data-book>Request an Appointment</button>\n          ' + CALL) + f"""
+    '<button class="btn btn-primary btn-lg" data-book>Request an Appointment</button>\n          ' + CALL,
+    '<img src="{root}assets/reception.jpg" width="1200" height="900" alt="The Pronto Automotive front counter and service desk, where customers are greeted.">') + f"""
 
   <section class="section bg-soft">
     <div class="wrap">

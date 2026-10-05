@@ -90,12 +90,12 @@
 /* ---------- 5. Counters ---------- */
 [data-count]{display:inline-block; font-variant-numeric:tabular-nums; text-align:right}
 
-/* ---------- 6. Card hover (decor always, movement on real hover) ---------- */
+/* ---------- 6. Card hover (decor appears only on real hover) ---------- */
 .trust-item, .why-item{position:relative; overflow:hidden; isolation:isolate}
 .trust-item::after, .why-item::after{
   content:""; position:absolute; z-index:-1; top:-26px; right:-26px; width:78px; height:78px;
   border-radius:50%; background:rgba(196,30,42,.06); pointer-events:none;
-  transition:transform .6s var(--ease);
+  opacity:0; transform:scale(.6); transition:transform .6s var(--ease), opacity .4s ease;
 }
 .trust-item svg{transition:transform .6s var(--ease)}
 .why-num{transition:transform .35s var(--ease), background-color .35s ease, color .35s ease, border-color .35s ease}
@@ -111,7 +111,7 @@
   .txtlink svg{transition:transform .35s var(--ease)}
   .svc-card:hover .txtlink svg, .txtlink:hover svg{transform:translateX(4px)}
 
-  .trust-item:hover::after, .why-item:hover::after{transform:scale(1.5)}
+  .trust-item:hover::after, .why-item:hover::after{opacity:1; transform:scale(1.5)}
   .trust-item:hover svg{transform:rotate(360deg)}
   .why-item:hover .why-num{transform:rotate(12deg); background:var(--red); border-color:var(--red); color:#fff}
 }
