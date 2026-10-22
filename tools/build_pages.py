@@ -37,6 +37,11 @@ def chrome(fragment, root, active):
                           '<li><a href="' + root + active[0] + '" class="active" aria-current="page">' + active[1] + "</a></li>", 1)
     return out
 
+def webp_images(doc):
+    """<img> tags use the lighter .webp copies; og:image / schema keep the .jpg files."""
+    doc = re.sub(r'(src="[^"]*assets/(?:svc-[a-z-]+|reception|fleet-service))\.jpg"', r'\1.webp"', doc)
+    return re.sub(r'(src="[^"]*assets/shop-exterior)\.jpg"', r'\1-page.webp"', doc)
+
 def crumbs_html(trail):
     parts = [f'<a href="{{root}}{p}">{n}</a>' if p else f"<span>{n}</span>" for n, p in trail]
     return '<nav class="crumbs" aria-label="Breadcrumb">' + '<span aria-hidden="true">/</span>'.join(parts) + "</nav>"
@@ -71,17 +76,17 @@ def page(path, title, description, body, active, trail=None, schema=(), image="s
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="{root}css/styles.css">
-<link rel="stylesheet" href="{root}css/components.css">
-<link rel="stylesheet" href="{root}css/chat.css">
-<link rel="stylesheet" href="{root}css/motion.css">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700&family=Source+Sans+3:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700&family=Source+Sans+3:wght@400;500;600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700&family=Source+Sans+3:wght@400;500;600&display=swap"></noscript>
+<link rel="stylesheet" href="{root}css/app.min.css">
 <link rel="icon" href="{root}assets/logo/favicon.svg" type="image/svg+xml">
 {ld}</head>
 <body>
 """
     body = body.replace("{crumbs}", crumbs_html(trail) if trail else "")
     doc = head + chrome(top, root, active) + '<main id="top">\n' + body.replace("{root}", root) + "\n</main>\n\n" + chrome(bottom, root, None) + "</body>\n</html>\n"
+    doc = webp_images(doc)
     target = SITE / path
     target.parent.mkdir(parents=True, exist_ok=True)
     target.write_text(doc, encoding="utf-8")

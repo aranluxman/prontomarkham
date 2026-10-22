@@ -22,7 +22,9 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700&family=Source+Sans+3:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700&family=Source+Sans+3:wght@400;500;600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700&family=Source+Sans+3:wght@400;500;600&display=swap"></noscript>
 
 <script type="application/ld+json">
 {
@@ -72,10 +74,7 @@
 }
 </script>
 
-<link rel="stylesheet" href="css/styles.css">
-<link rel="stylesheet" href="css/components.css">
-<link rel="stylesheet" href="css/chat.css">
-<link rel="stylesheet" href="css/motion.css">
+<link rel="stylesheet" href="css/app.min.css">
 <link rel="icon" href="assets/logo/favicon.svg" type="image/svg+xml">
 </head>
 <body>
@@ -166,20 +165,20 @@
         <div class="hero-badge hero-badge--since" aria-hidden="true"><span>Since <b data-count="1979" data-count-from="1900">1979</b> &middot; Gas &amp; Diesel</span></div>
         <div class="hero-frame" id="heroFrame" style="--cycle:35s; --step:7s; --fade:2s">
           <figure class="scene" style="--i:0; --focal:62% 50%; --origin:65% 45%; --kb-from:scale(1.04) translate3d(1.2%, 0, 0); --kb-to:scale(1.12) translate3d(-1.2%, -0.6%, 0)">
-            <img src="assets/hero/exterior-lg.webp" width="1600" height="900" fetchpriority="high"
+            <img src="assets/hero/exterior-960.webp" srcset="assets/hero/exterior-640.webp 640w, assets/hero/exterior-960.webp 960w, assets/hero/exterior-1280.webp 1280w" sizes="(max-width: 900px) calc(100vw - 40px), 760px" width="960" height="540" fetchpriority="high" decoding="async"
                  alt="Pronto Automotive shop exterior at 5833 Highway 7 East in Markham, with red awnings and the service bays.">
           </figure>
           <figure class="scene" aria-hidden="true" style="--i:1; --focal:40% 45%; --origin:35% 45%; --kb-from:scale(1.03) translate3d(-1%, 0, 0); --kb-to:scale(1.07) translate3d(1%, 0, 0)">
-            <img src="assets/hero/tires-lg.webp" width="1440" height="1044" alt="">
+            <img data-srcset="assets/hero/tires-640.webp 640w, assets/hero/tires-960.webp 960w, assets/hero/tires-1280.webp 1280w" data-sizes="(max-width: 900px) calc(100vw - 40px), 760px" width="960" height="696" decoding="async" alt="">
           </figure>
           <figure class="scene" aria-hidden="true" style="--i:2; --focal:60% 62%; --origin:65% 60%; --kb-from:scale(1.08) translate3d(0, -1%, 0); --kb-to:scale(1.03) translate3d(0, 0.8%, 0)">
-            <img src="assets/hero/engine-lg.webp" width="1440" height="1169" alt="">
+            <img data-srcset="assets/hero/engine-640.webp 640w, assets/hero/engine-960.webp 960w, assets/hero/engine-1280.webp 1280w" data-sizes="(max-width: 900px) calc(100vw - 40px), 760px" width="960" height="779" decoding="async" alt="">
           </figure>
           <figure class="scene" aria-hidden="true" style="--i:3; --focal:42% 45%; --origin:45% 40%; --kb-from:scale(1.03) translate3d(0.6%, 0, 0); --kb-to:scale(1.1) translate3d(-0.6%, 0, 0)">
-            <img src="assets/hero/reception-lg.webp" width="1448" height="860" alt="">
+            <img data-srcset="assets/hero/reception-640.webp 640w, assets/hero/reception-960.webp 960w, assets/hero/reception-1280.webp 1280w" data-sizes="(max-width: 900px) calc(100vw - 40px), 760px" width="960" height="570" decoding="async" alt="">
           </figure>
           <figure class="scene" aria-hidden="true" style="--i:4; --focal:52% 55%; --origin:52% 55%; --kb-from:scale(1.12) translate3d(-1%, 0.6%, 0); --kb-to:scale(1.04) translate3d(1%, 0, 0)">
-            <img src="assets/hero/aerial-lg.webp" width="1600" height="900" alt="">
+            <img data-srcset="assets/hero/aerial-640.webp 640w, assets/hero/aerial-960.webp 960w, assets/hero/aerial-1280.webp 1280w" data-sizes="(max-width: 900px) calc(100vw - 40px), 760px" width="960" height="540" decoding="async" alt="">
           </figure>
         </div>
       </div>
@@ -229,7 +228,7 @@
 
       <div class="svc-grid">
         <article class="svc-card reveal">
-          <div class="svc-photo"><img src="assets/svc-diagnostics.jpg" loading="lazy" width="760" height="421" alt="Pronto technician running computer diagnostics from inside a customer vehicle."></div>
+          <div class="svc-photo"><img src="assets/svc-diagnostics.webp" loading="lazy" width="760" height="421" alt="Pronto technician running computer diagnostics from inside a customer vehicle."></div>
           <div class="svc-body">
             <h3><a href="services/diagnostics.html">Diagnostics</a></h3>
             <p>We trace warning lights and hard-to-find faults properly, so the right repair happens the first time.</p>
@@ -238,7 +237,7 @@
         </article>
 
         <article class="svc-card reveal">
-          <div class="svc-photo"><img src="assets/svc-brakes.jpg" loading="lazy" width="760" height="404" alt="Close-up of brake rotor and hub being serviced by a Pronto Automotive technician."></div>
+          <div class="svc-photo"><img src="assets/svc-brakes.webp" loading="lazy" width="760" height="404" alt="Close-up of brake rotor and hub being serviced by a Pronto Automotive technician."></div>
           <div class="svc-body">
             <h3><a href="services/brakes.html">Brakes</a></h3>
             <p>Pads, rotors, calipers and fluid service — inspected carefully and replaced only when needed.</p>
@@ -247,7 +246,7 @@
         </article>
 
         <article class="svc-card reveal">
-          <div class="svc-photo"><img src="assets/svc-maintenance.jpg" loading="lazy" width="760" height="533" alt="Pronto Automotive technician performing engine bay maintenance on a vehicle."></div>
+          <div class="svc-photo"><img src="assets/svc-maintenance.webp" loading="lazy" width="760" height="533" alt="Pronto Automotive technician performing engine bay maintenance on a vehicle."></div>
           <div class="svc-body">
             <h3><a href="services/oil-maintenance.html">Oil &amp; Maintenance</a></h3>
             <p>Oil, filters, fluids and scheduled servicing that keep your vehicle reliable through Ontario seasons.</p>
@@ -256,7 +255,7 @@
         </article>
 
         <article class="svc-card reveal">
-          <div class="svc-photo"><img src="assets/svc-tires.jpg" loading="lazy" width="760" height="535" alt="Technician selecting tires from the stocked tire racks at Pronto Automotive."></div>
+          <div class="svc-photo"><img src="assets/svc-tires.webp" loading="lazy" width="760" height="535" alt="Technician selecting tires from the stocked tire racks at Pronto Automotive."></div>
           <div class="svc-body">
             <h3><a href="services/tires.html">Tires</a></h3>
             <p>Supply, installation, balancing, repairs and seasonal changeovers for most makes and models.</p>
@@ -265,7 +264,7 @@
         </article>
 
         <article class="svc-card reveal">
-          <div class="svc-photo"><img src="assets/svc-suspension.jpg" loading="lazy" width="760" height="581" alt="Underside vehicle inspection on a hoist at the Pronto Automotive shop."></div>
+          <div class="svc-photo"><img src="assets/svc-suspension.webp" loading="lazy" width="760" height="581" alt="Underside vehicle inspection on a hoist at the Pronto Automotive shop."></div>
           <div class="svc-body">
             <h3><a href="services/steering-suspension.html">Steering &amp; Suspension</a></h3>
             <p>Shocks, struts, bushings and steering components — for a vehicle that tracks straight and rides right.</p>
@@ -274,7 +273,7 @@
         </article>
 
         <article class="svc-card reveal">
-          <div class="svc-photo"><img src="assets/svc-engine-repair.jpg" loading="lazy" width="760" height="535" alt="Technician working with a wrench on an engine during a repair at Pronto Automotive."></div>
+          <div class="svc-photo"><img src="assets/svc-engine-repair.webp" loading="lazy" width="760" height="535" alt="Technician working with a wrench on an engine during a repair at Pronto Automotive."></div>
           <div class="svc-body">
             <h3><a href="services/engine-repair.html">Engine Repair</a></h3>
             <p>From leaks and cooling issues to larger mechanical work on both light and heavier-duty vehicles.</p>
@@ -336,7 +335,7 @@
   <section class="section bg-soft" id="about">
     <div class="wrap split">
       <div class="split-media reveal">
-        <img src="assets/reception.jpg" loading="lazy" width="1200" height="900"
+        <img src="assets/reception.webp" loading="lazy" width="1200" height="900"
              alt="The Pronto Automotive front counter and service desk, where customers are greeted.">
       </div>
       <div class="reveal">
@@ -398,7 +397,7 @@
         <a class="btn btn-primary" href="fleet.html">Learn About Fleet Services</a>
       </div>
       <div class="split-media reveal">
-        <img src="assets/fleet-service.jpg" loading="lazy" width="1400" height="933" alt="Commercial vans and trucks lined up outside a fleet service garage.">
+        <img src="assets/fleet-service.webp" loading="lazy" width="1400" height="933" alt="Commercial vans and trucks lined up outside a fleet service garage.">
       </div>
     </div>
   </section>
@@ -853,8 +852,6 @@
   <button type="button" class="toast-close" aria-label="Dismiss notification">&times;</button>
 </div>
 
-<script src="js/site.js"></script>
-<script src="js/chat.js"></script>
-<script src="js/motion.js"></script>
+<script src="js/app.min.js" defer></script>
 </body>
 </html>

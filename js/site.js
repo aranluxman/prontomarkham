@@ -22,6 +22,11 @@
     });
     spyLinks.forEach(function(l,i){ l.classList.toggle("active", i === idx); });
   }
+  // Geometry reads at startup force an early layout; wait for the first paint.
+  function afterPaint(fn){
+    if(window.requestAnimationFrame) requestAnimationFrame(function(){ setTimeout(fn, 0); });
+    else fn();
+  }
   function onScroll(){
     if(header) header.classList.toggle("stuck", window.scrollY > 40);
     spy();
@@ -62,6 +67,18 @@
   var heroFrame = $("#heroFrame");
   var prefersCalm = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   if(heroFrame && !prefersCalm) heroFrame.classList.add("is-animated");
+
+  // Only the first photo ships with the page; the rest load once it has painted,
+  // so they never compete with it for bandwidth.
+  function loadScenes(){
+    $$("img[data-srcset]", heroFrame || document).forEach(function(img){
+      img.sizes = img.getAttribute("data-sizes") || "";
+      img.srcset = img.getAttribute("data-srcset");
+      img.removeAttribute("data-srcset"); img.removeAttribute("data-sizes");
+    });
+  }
+  if(document.readyState === "complete") setTimeout(loadScenes, 400);
+  else window.addEventListener("load", function(){ setTimeout(loadScenes, 400); });
 
   /* ---- Review carousel ---- */
   // Rotates on its own and only stops when the visitor clicks it (click again to resume).
@@ -144,7 +161,7 @@
   window.prontoForm = { endpoint: FORM_ENDPOINT, cc: FORM_CC };
 
   var modal = $("#modal"), form = $("#bookForm");
-  if(!modal || !form){ onScroll(); return; }
+  if(!modal || !form){ afterPaint(onScroll); return; }
 
   var lastFocus = null;
   var phone = $("#b-phone");
@@ -292,5 +309,5 @@
     tTimer = setTimeout(function(){ toast.classList.remove("show"); }, 6000);
   }
 
-  onScroll();
+  afterPaint(onScroll);
 })();

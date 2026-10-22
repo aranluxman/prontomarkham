@@ -17,11 +17,10 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/styles.css">
-<link rel="stylesheet" href="css/components.css">
-<link rel="stylesheet" href="css/chat.css">
-<link rel="stylesheet" href="css/motion.css">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700&family=Source+Sans+3:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700&family=Source+Sans+3:wght@400;500;600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700&family=Source+Sans+3:wght@400;500;600&display=swap"></noscript>
+<link rel="stylesheet" href="css/app.min.css">
 <link rel="icon" href="assets/logo/favicon.svg" type="image/svg+xml">
 <script type="application/ld+json">
 {
@@ -135,7 +134,7 @@
           <a href="tel:+19052949476" class="btn btn-outline btn-lg">Call 905-294-9476</a>
         </div>
       </div>
-      <div class="page-hero-media"><img src="assets/fleet-service.jpg" width="1400" height="933" alt="Commercial vans and trucks lined up outside a fleet service garage."></div>
+      <div class="page-hero-media"><img src="assets/fleet-service.webp" width="1400" height="933" alt="Commercial vans and trucks lined up outside a fleet service garage."></div>
     </div>
   </section>
 
@@ -329,8 +328,6 @@
   <button type="button" class="toast-close" aria-label="Dismiss notification">&times;</button>
 </div>
 
-<script src="js/site.js"></script>
-<script src="js/chat.js"></script>
-<script src="js/motion.js"></script>
+<script src="js/app.min.js" defer></script>
 </body>
 </html>
