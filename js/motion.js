@@ -182,7 +182,7 @@
       var last = steps.lastElementChild;
       if(last) steps.style.setProperty("--steps-tail", Math.max(last.offsetHeight - 23, 0) + "px");
     };
-    setTail();
+    if(window.requestAnimationFrame) requestAnimationFrame(function(){ setTimeout(setTail, 0); }); else setTail();
     window.addEventListener("resize", setTail);
     if(reduce || !canObserve){
       steps.classList.add("is-drawn");
